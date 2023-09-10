@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<!--2nd method-->
+<div class="container" >
+  <div class="row">
+    {% for i in movie_list %}
+    <div class="col-md-3">
+      <figure class="figure">
+        <img src="{{i.img.url}}" class="img-thumbnail" class="figure-img img-fluid rounded" alt="">
+        <figcaption class="figure-caption text-right"><a href="{% url 'movieapp:detail' i.id %}">{{i.name}}</a><br><br></figcaption>
+      </figure>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}
